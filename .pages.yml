@@ -108,7 +108,7 @@ content:
       - name: previewUrl
         label: 悬停预览视频地址
         type: string
-        description: 可选。建议使用短 MP4 / WebM 直链；YouTube/Bilibili 不用于悬停预览。
+        description: 可选。建议填写 5–15 秒、720p/1080p 的 MP4/WebM 直链（例如 R2）。鼠标移到项目卡片时会静音自动预览；视频号/YouTube/Bilibili 页面链接不能用于悬停预览。
       - name: websiteVideoUrl
         label: 网站视频链接
         type: string
@@ -191,6 +191,10 @@ content:
             type: image
             options:
               media: images
+          - name: previewUrl
+            label: 悬停预览视频地址
+            type: string
+            description: 可选。建议填写 5–15 秒、720p/1080p 的 MP4/WebM 直链（例如 R2）。鼠标移到素材卡片时会静音自动预览；不要填视频号页面链接。
           - name: websiteVideoUrl
             label: 网站视频链接
             type: string
