@@ -104,7 +104,7 @@
       <article class="film-card">
         <a class="film-thumb-link" href="project.html?id=${encodeURIComponent(project.id)}" aria-label="查看 ${escapeHtml(project.title)}">
           ${mediaLayer({ src: project.cover, alt: project.title, theme: project.theme, className: "film-thumb" })}
-          ${project.previewUrl && directVideoUrl(project.previewUrl) ? `<video class="card-preview" muted loop playsinline preload="metadata" src="${escapeHtml(project.previewUrl)}"></video>` : ""}
+          ${project.previewUrl && directVideoUrl(project.previewUrl) ? `<video class="card-preview" muted loop playsinline preload="none" src="${escapeHtml(project.previewUrl)}"></video><span class="preview-hint">HOVER TO PREVIEW</span>` : ""}
         </a>
         <div class="film-info">
           <span class="num">${String(index + 1).padStart(2, "0")} / ${escapeHtml(project.year)}</span>
@@ -130,7 +130,7 @@
         <a class="project-tile" href="project.html?id=${encodeURIComponent(project.id)}">
           <div class="project-image-wrap">
             ${mediaLayer({ src: project.cover, alt: project.title, theme: project.theme, className: "project-image" })}
-            ${project.previewUrl && directVideoUrl(project.previewUrl) ? `<video class="card-preview" muted loop playsinline preload="metadata" src="${escapeHtml(project.previewUrl)}"></video>` : ""}
+            ${project.previewUrl && directVideoUrl(project.previewUrl) ? `<video class="card-preview" muted loop playsinline preload="none" src="${escapeHtml(project.previewUrl)}"></video><span class="preview-hint">HOVER TO PREVIEW</span>` : ""}
             <span class="project-view">VIEW PROJECT</span>
           </div>
           <div class="project-body">
@@ -171,8 +171,9 @@
     const src = item.cover || item.image || item.after || item.before || "";
     const image = src ? `<img src="${escapeHtml(src)}" alt="${escapeHtml(item.title)}" loading="lazy" onerror="this.style.display='none'">` : "";
     const label = item.type === "video" ? "VIDEO" : item.type === "photo" ? "PHOTO" : "LUT";
-    const source = item.websiteVideoUrl || item.sourceUrl || "";
-    return `<div class="asset-cover generated-media" style="--media-theme:${item.theme || "#ddd"}">${image}<span class="asset-kind">${label}</span>${item.type === "video" && source && directVideoUrl(source) ? `<video class="asset-preview" muted loop playsinline preload="metadata" src="${escapeHtml(source)}"></video>` : ""}</div>`;
+    const preview = item.previewUrl || "";
+    const hasPreview = item.type === "video" && preview && directVideoUrl(preview);
+    return `<div class="asset-cover generated-media${hasPreview ? " has-video-preview" : ""}" style="--media-theme:${item.theme || "#ddd"}">${image}<span class="asset-kind">${label}</span>${hasPreview ? `<video class="asset-preview" muted loop playsinline preload="none" src="${escapeHtml(preview)}"></video><span class="preview-hint">HOVER TO PREVIEW</span>` : ""}</div>`;
   }
 
   function assetAction(item) {
@@ -266,21 +267,52 @@
     container.innerHTML = DATA.contact.map(item => `<div class="contact-row"><span>${escapeHtml(item.label)}</span><span>${escapeHtml(item.value)}</span></div>`).join("");
   }
 
+  const pausePreview = (video, reset = true) => {
+    if (!video) return;
+    video.pause();
+    if (reset) {
+      try { video.currentTime = 0; } catch (_) {}
+    }
+    video.closest(".film-thumb-link, .project-image-wrap, .asset-cover")?.classList.remove("preview-playing");
+  };
+
+  const playPreview = (video) => {
+    if (!video) return;
+    document.querySelectorAll(".card-preview, .asset-preview").forEach(other => {
+      if (other !== video) pausePreview(other, false);
+    });
+    video.closest(".film-thumb-link, .project-image-wrap, .asset-cover")?.classList.add("preview-playing");
+    const promise = video.play();
+    if (promise?.catch) promise.catch(() => {
+      video.closest(".film-thumb-link, .project-image-wrap, .asset-cover")?.classList.remove("preview-playing");
+    });
+  };
+
   function enablePreviewHover(scope) {
+    if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
     scope.querySelectorAll(".card-preview").forEach(video => {
       const host = video.closest("a") || video.parentElement;
-      host?.addEventListener("mouseenter", () => video.play().catch(() => {}));
-      host?.addEventListener("mouseleave", () => { video.pause(); try { video.currentTime = 0; } catch (_) {} });
+      host?.addEventListener("mouseenter", () => playPreview(video));
+      host?.addEventListener("mouseleave", () => pausePreview(video));
+      host?.addEventListener("focusin", () => playPreview(video));
+      host?.addEventListener("focusout", () => pausePreview(video));
     });
   }
 
   function enableAssetHover(scope) {
+    if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
     scope.querySelectorAll(".asset-preview").forEach(video => {
       const host = video.closest(".asset-card");
-      host?.addEventListener("mouseenter", () => video.play().catch(() => {}));
-      host?.addEventListener("mouseleave", () => { video.pause(); try { video.currentTime = 0; } catch (_) {} });
+      host?.addEventListener("mouseenter", () => playPreview(video));
+      host?.addEventListener("mouseleave", () => pausePreview(video));
+      host?.addEventListener("focusin", () => playPreview(video));
+      host?.addEventListener("focusout", () => pausePreview(video));
     });
   }
+
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) document.querySelectorAll(".card-preview, .asset-preview").forEach(video => pausePreview(video, false));
+  });
 
   function renderCopyright() {
     document.querySelectorAll("[data-copyright]").forEach(node => node.textContent = DATA.site.copyright || `© ${new Date().getFullYear()} TANNETVISION`);
