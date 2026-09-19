@@ -171,14 +171,15 @@
     const src = item.cover || item.image || item.after || item.before || "";
     const image = src ? `<img src="${escapeHtml(src)}" alt="${escapeHtml(item.title)}" loading="lazy" onerror="this.style.display='none'">` : "";
     const label = item.type === "video" ? "VIDEO" : item.type === "photo" ? "PHOTO" : "LUT";
-    const source = item.sourceUrl || "";
+    const source = item.websiteVideoUrl || item.sourceUrl || "";
     return `<div class="asset-cover generated-media" style="--media-theme:${item.theme || "#ddd"}">${image}<span class="asset-kind">${label}</span>${item.type === "video" && source && directVideoUrl(source) ? `<video class="asset-preview" muted loop playsinline preload="metadata" src="${escapeHtml(source)}"></video>` : ""}</div>`;
   }
 
   function assetAction(item) {
-    const href = item.downloadUrl || item.source || item.sourceUrl || item.image || "";
+    const href = item.downloadUrl || item.source || item.websiteVideoUrl || item.sourceUrl || item.wechatVideoUrl || item.image || "";
     if (!href) return "";
-    const label = item.type === "lut" ? "DOWNLOAD LUT →" : item.type === "video" ? "VIEW VIDEO →" : "VIEW PHOTO →";
+    const isWechatOnlyVideo = item.type === "video" && !item.websiteVideoUrl && !item.sourceUrl && !!item.wechatVideoUrl;
+    const label = item.type === "lut" ? "DOWNLOAD LUT →" : item.type === "video" ? (isWechatOnlyVideo ? "视频号观看 ↗" : "VIEW VIDEO →") : "VIEW PHOTO →";
     return `<a class="asset-action" href="${escapeHtml(href)}" ${/^https?:/i.test(href) ? 'target="_blank" rel="noopener"' : ""}>${label}</a>`;
   }
 
@@ -232,15 +233,22 @@
     }
 
     document.title = `${project.title} — ${DATA.site.name || "TANNETVISION"}`;
-    const player = renderVideoPlayer(project.videoUrl || project.film || "", project.title);
+    const websiteVideoUrl = project.websiteVideoUrl || project.videoUrl || project.film || "";
+    const wechatVideoUrl = project.wechatVideoUrl || "";
+    const player = renderVideoPlayer(websiteVideoUrl, project.title);
+    const projectActions = `
+      <div class="project-actions">
+        ${websiteVideoUrl ? `<a class="project-action primary" href="#film-player">PLAY FILM <span>↘</span></a>` : ""}
+        ${wechatVideoUrl ? `<a class="project-action" href="${escapeHtml(wechatVideoUrl)}" target="_blank" rel="noopener">视频号观看 <span>↗</span></a>` : ""}
+      </div>`;
     root.innerHTML = `
       <section class="project-detail-hero">
         <div class="project-detail-media">${mediaLayer({ src: project.cover, alt: project.title, theme: project.theme, className: "detail-cover" })}<div class="project-detail-overlay"></div></div>
         <div class="container project-detail-title"><div class="eyebrow">${escapeHtml(project.categoryEn || project.category)} · ${escapeHtml(project.year)}</div><h1>${escapeHtml(project.englishTitle || project.title)}</h1><p class="project-detail-cn">${escapeHtml(project.title)}</p></div>
       </section>
-      <section class="section project-overview"><div class="container project-overview-grid"><div><div class="eyebrow">Project Overview</div><h2>${escapeHtml(project.description || "")}</h2></div><div class="project-facts"><div><span>YEAR</span><strong>${escapeHtml(project.year)}</strong></div><div><span>TYPE</span><strong>${escapeHtml(project.category)}</strong></div><div><span>ROLE</span><strong>${escapeHtml((project.roles || []).join(" / "))}</strong></div></div></div></section>
+      <section class="section project-overview"><div class="container project-overview-grid"><div><div class="eyebrow">Project Overview</div><h2>${escapeHtml(project.description || "")}</h2>${projectActions}</div><div class="project-facts"><div><span>YEAR</span><strong>${escapeHtml(project.year)}</strong></div><div><span>TYPE</span><strong>${escapeHtml(project.category)}</strong></div><div><span>ROLE</span><strong>${escapeHtml((project.roles || []).join(" / "))}</strong></div></div></div></section>
       <section class="section project-story"><div class="container project-story-grid"><div class="eyebrow">Story / Concept</div><p>${escapeHtml(project.story || project.description || "")}</p></div></section>
-      <section class="section project-player-section"><div class="container">${player || `<div class="empty-media-note">在 Pages CMS 的“项目管理”中填写“完整视频链接”，这里就会自动出现播放器。</div>`}</div></section>
+      <section class="section project-player-section" id="film-player"><div class="container">${player || `<div class="empty-media-note">在 Pages CMS 的“项目管理”中填写“网站视频链接”，这里就会自动出现播放器。只有视频号链接时，可使用上方“视频号观看”按钮。</div>`}</div></section>
       ${Array.isArray(project.gallery) && project.gallery.length ? `<section class="section"><div class="container project-gallery">${project.gallery.map(src => `<img src="${escapeHtml(src)}" alt="${escapeHtml(project.title)} 项目图片" loading="lazy">`).join("")}</div></section>` : ""}
       <section class="section next-project-section"><div class="container">${nextProjectLink(project)}</div></section>`;
   }

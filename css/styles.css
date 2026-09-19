@@ -296,3 +296,14 @@ button,input{font:inherit}
 .asset-action{display:inline-block;margin-top:10px;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:inherit;border-bottom:1px solid currentColor;padding-bottom:2px}
 .assets-page .asset-action{color:#111}
 .hero-fallback{background-color:#0b0d0f;background-repeat:no-repeat}
+
+
+/* v5: website video + WeChat Channels project actions */
+.project-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.project-action{display:inline-flex;align-items:center;justify-content:space-between;gap:28px;min-width:158px;padding:13px 15px;border:1px solid rgba(255,255,255,.23);font-size:9px;letter-spacing:.14em;text-transform:uppercase;transition:background .22s ease,color .22s ease,border-color .22s ease,transform .22s ease}
+.project-action span{font-size:13px;line-height:1}
+.project-action:hover{transform:translateY(-2px);border-color:rgba(255,255,255,.62)}
+.project-action.primary{background:#f3f3ef;color:#0d0f10;border-color:#f3f3ef}
+.project-action.primary:hover{background:#fff}
+#film-player{scroll-margin-top:78px}
+@media(max-width:560px){.project-actions{margin-top:26px}.project-action{min-width:100%;padding:13px 14px}}
