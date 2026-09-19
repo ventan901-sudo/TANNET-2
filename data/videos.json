@@ -1,0 +1,53 @@
+[
+  {
+    "id": "video-001",
+    "title": "Guangzhou Night 01",
+    "cover": "",
+    "badge": "4K",
+    "resolution": "4K",
+    "info": "城市 · 夜景 · Sony A7S III · MP4 · S-Log3 · 00:18",
+    "tags": [
+      "广州",
+      "城市",
+      "夜景",
+      "Sony",
+      "S-Log3"
+    ],
+    "theme": "linear-gradient(135deg,#183f5b,#df9d55 55%,#1e2630)",
+    "order": 1,
+    "sourceUrl": ""
+  },
+  {
+    "id": "video-002",
+    "title": "Coastline 01",
+    "cover": "",
+    "badge": "4K",
+    "resolution": "4K",
+    "info": "自然 · 海岸 · 空镜 · MP4 · 25fps · 00:24",
+    "tags": [
+      "自然",
+      "海岸",
+      "空镜",
+      "25fps"
+    ],
+    "theme": "linear-gradient(135deg,#7698ac,#d9c6ac)",
+    "order": 3,
+    "sourceUrl": ""
+  },
+  {
+    "id": "video-003",
+    "title": "Urban Blue 04",
+    "cover": "",
+    "badge": "4K",
+    "resolution": "4K",
+    "info": "城市 · 蓝调时刻 · MP4 · S-Log3 · 00:15",
+    "tags": [
+      "城市",
+      "蓝调",
+      "S-Log3"
+    ],
+    "theme": "linear-gradient(135deg,#192532,#4f7597)",
+    "order": 6,
+    "sourceUrl": ""
+  }
+]

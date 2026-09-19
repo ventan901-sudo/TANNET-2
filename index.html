@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>TANNETVISION — Video Creator Portfolio</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="home-page">
+  <header class="nav home-nav">
+    <div class="nav-inner">
+      <a class="brand" href="index.html" aria-label="TANNETVISION 首页"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 42 28" role="img"><path class="mark-t" d="M2 4H20V8H13V24H8.5V8H2Z"/><path class="mark-v" d="M21 4H26L31.5 17.2L37 4H42L33.8 24H29.2Z"/><path class="mark-cut" d="M18.2 4H22.2L13.8 24H9.8Z"/></svg></span><span class="brand-word"><strong>TANNET</strong><em>VISION</em></span></a>
+      <nav class="nav-links">
+        <a class="active" href="index.html">主页</a><a href="projects.html">项目</a><a href="experience.html">经历</a><a href="assets.html">素材</a><a href="contact.html">联系</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero hero-reference">
+    <div class="hero-media hero-video-shell" aria-hidden="true">
+      <video id="heroVideo" class="hero-video" autoplay muted loop playsinline preload="metadata"></video>
+      <div class="hero-fallback"></div>
+    </div>
+    <div class="hero-shade"></div>
+    <div class="hero-center">
+      <p class="hero-motto"><span id="heroMotto">永不止步</span></p>
+      <h1 id="heroName">TANNETVISION</h1>
+    </div>
+  </section>
+
+  <section class="section home-films">
+    <div class="container">
+      <div class="section-title compact-title"><h2>精选项目</h2><p>电影短片、商业影像、音乐视频与视觉实验。</p></div>
+      <div class="film-list" id="featuredProjects"></div>
+    </div>
+  </section>
+
+  <footer class="footer"><div class="container"><span>TANNETVISION</span><span data-copyright></span></div></footer>
+  <script src="js/app.js"></script>
+</body>
+</html>

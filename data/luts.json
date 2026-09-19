@@ -1,0 +1,38 @@
+[
+  {
+    "id": "lut-001",
+    "title": "TANNET Cinema 01",
+    "cover": "",
+    "before": "",
+    "after": "",
+    "source": "",
+    "badge": ".CUBE",
+    "info": "Cinematic · Warm · 适配 Log / Rec.709",
+    "tags": [
+      "电影感",
+      "暖色",
+      "Log",
+      "Rec.709"
+    ],
+    "theme": "linear-gradient(90deg,#978c7c 50%,#4c3128 50%)",
+    "order": 4
+  },
+  {
+    "id": "lut-002",
+    "title": "Night Blue",
+    "cover": "",
+    "before": "",
+    "after": "",
+    "source": "",
+    "badge": ".CUBE",
+    "info": "Cool · Night · Neon · 适配 S-Log3",
+    "tags": [
+      "夜景",
+      "蓝调",
+      "霓虹",
+      "S-Log3"
+    ],
+    "theme": "linear-gradient(90deg,#4b5a66 50%,#1e2b35 50%)",
+    "order": 7
+  }
+]

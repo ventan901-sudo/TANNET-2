@@ -1,0 +1,95 @@
+[
+  {
+    "id": "wish",
+    "title": "这声，遂我心愿",
+    "englishTitle": "THE SOUND OF MY WISH",
+    "year": "2026",
+    "category": "短片",
+    "categoryEn": "Short Film",
+    "roles": [
+      "导演",
+      "剪辑"
+    ],
+    "cover": "",
+    "preview": "",
+    "film": "",
+    "description": "关于记忆、距离与未曾消失的情绪。",
+    "story": "一部关于记忆、距离与愿望的短片。这里可以继续补充项目背景、创作动机与故事概述。",
+    "featured": true,
+    "theme": "linear-gradient(135deg,#15262c,#40271f 48%,#8d765e)",
+    "gallery": [],
+    "order": 1,
+    "videoUrl": "",
+    "previewUrl": ""
+  },
+  {
+    "id": "night-city",
+    "title": "夜城",
+    "englishTitle": "NIGHT CITY",
+    "year": "2026",
+    "category": "MV",
+    "categoryEn": "Music Video",
+    "roles": [
+      "摄影",
+      "剪辑",
+      "调色"
+    ],
+    "cover": "",
+    "preview": "",
+    "film": "",
+    "description": "一段关于城市夜色、孤独与移动中的视觉旅程。",
+    "story": "以城市夜景、霓虹与人物移动为核心视觉语言的音乐影像实验。",
+    "featured": true,
+    "theme": "linear-gradient(135deg,#07141c,#0e4b66 48%,#8b4a31)",
+    "gallery": [],
+    "order": 2,
+    "videoUrl": "",
+    "previewUrl": ""
+  },
+  {
+    "id": "commercial-reel",
+    "title": "商业影像合集",
+    "englishTitle": "COMMERCIAL REEL",
+    "year": "2025",
+    "category": "商业片",
+    "categoryEn": "Brand Film",
+    "roles": [
+      "导演",
+      "剪辑"
+    ],
+    "cover": "",
+    "preview": "",
+    "film": "",
+    "description": "商业影像与品牌视觉项目合集。",
+    "story": "用于集中展示品牌片、产品片、活动影像以及商业内容创作。",
+    "featured": true,
+    "theme": "linear-gradient(135deg,#292929,#0e1012 50%,#58636c)",
+    "gallery": [],
+    "order": 3,
+    "videoUrl": "",
+    "previewUrl": ""
+  },
+  {
+    "id": "experiment-01",
+    "title": "视觉实验 01",
+    "englishTitle": "EXPERIMENT 01",
+    "year": "2026",
+    "category": "实验影像",
+    "categoryEn": "Visual Experiment",
+    "roles": [
+      "视觉设计",
+      "剪辑"
+    ],
+    "cover": "",
+    "preview": "",
+    "film": "",
+    "description": "关于运动、光线与节奏的短视觉实验。",
+    "story": "用来收录不属于传统短片、MV、商业片分类的视觉尝试。",
+    "featured": false,
+    "theme": "linear-gradient(135deg,#1a2028,#0d0f11 60%,#334151)",
+    "gallery": [],
+    "order": 4,
+    "videoUrl": "",
+    "previewUrl": ""
+  }
+]

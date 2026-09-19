@@ -1,0 +1,51 @@
+[
+  {
+    "id": "photo-001",
+    "title": "Street Light 02",
+    "cover": "",
+    "badge": "6K",
+    "resolution": "6000 × 4000",
+    "info": "城市 · 建筑 · 日落 · JPG / RAW · 6000×4000",
+    "tags": [
+      "城市",
+      "建筑",
+      "日落",
+      "RAW"
+    ],
+    "theme": "linear-gradient(135deg,#62a9d1,#f3c76f 55%,#cb7965)",
+    "order": 2,
+    "image": ""
+  },
+  {
+    "id": "photo-002",
+    "title": "Field 03",
+    "cover": "",
+    "badge": "6K",
+    "resolution": "6000 × 4000",
+    "info": "自然 · 草地 · 旅行 · JPG / RAW · 6000×4000",
+    "tags": [
+      "自然",
+      "草地",
+      "旅行"
+    ],
+    "theme": "linear-gradient(135deg,#709258,#c5d79f)",
+    "order": 5,
+    "image": ""
+  },
+  {
+    "id": "photo-003",
+    "title": "Portrait Light 05",
+    "cover": "",
+    "badge": "RAW",
+    "resolution": "RAW / JPG",
+    "info": "人物 · 肖像 · 柔光 · RAW / JPG",
+    "tags": [
+      "人物",
+      "肖像",
+      "柔光"
+    ],
+    "theme": "linear-gradient(135deg,#9c7d64,#ded0c1)",
+    "order": 8,
+    "image": ""
+  }
+]

@@ -1,0 +1,30 @@
+[
+  {
+    "year": "2026",
+    "title": "《这声，遂我心愿》",
+    "role": "导演 / 剪辑",
+    "description": "负责影片前期视觉设计、拍摄统筹以及后期剪辑。",
+    "order": 1
+  },
+  {
+    "year": "2026",
+    "title": "TANNETVISION",
+    "role": "视频创作者 / Personal Brand",
+    "description": "建立个人影视创作品牌与作品展示体系，持续更新短片、商业影像与视觉实验。",
+    "order": 2
+  },
+  {
+    "year": "2025",
+    "title": "商业与校园影像创作",
+    "role": "Video Creator",
+    "description": "参与商业视频、校园影像、短片剪辑与视觉实验，逐步建立个人影像语言。",
+    "order": 3
+  },
+  {
+    "year": "2024",
+    "title": "开始探索视觉叙事",
+    "role": "Photography / Editing / Color",
+    "description": "开始系统学习摄影、剪辑、调色和叙事表达。",
+    "order": 4
+  }
+]
