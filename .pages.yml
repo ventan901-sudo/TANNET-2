@@ -109,10 +109,14 @@ content:
         label: 悬停预览视频地址
         type: string
         description: 可选。建议使用短 MP4 / WebM 直链；YouTube/Bilibili 不用于悬停预览。
-      - name: videoUrl
-        label: 完整视频链接
+      - name: websiteVideoUrl
+        label: 网站视频链接
         type: string
-        description: 可填写 YouTube、Bilibili 或 MP4/WebM 直链。
+        description: 用于网站内播放。可填写 YouTube、Bilibili 或 MP4/WebM 直链；没有可留空。
+      - name: wechatVideoUrl
+        label: 微信视频号链接
+        type: string
+        description: 填写该作品的视频号分享链接。前端会显示“视频号观看”按钮。
       - name: description
         label: 一句话简介
         type: text
@@ -187,10 +191,14 @@ content:
             type: image
             options:
               media: images
-          - name: sourceUrl
-            label: 视频链接
+          - name: websiteVideoUrl
+            label: 网站视频链接
             type: string
-            description: 可填写 YouTube、Bilibili 或 MP4/WebM 直链。
+            description: 可填写 YouTube、Bilibili 或 MP4/WebM 直链；用于网站内播放或预览。
+          - name: wechatVideoUrl
+            label: 微信视频号链接
+            type: string
+            description: 可选。填写视频号作品分享链接，前端会提供“视频号观看”入口。
           - name: badge
             label: 角标
             type: string
