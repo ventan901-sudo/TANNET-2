@@ -1,0 +1,334 @@
+media:
+  - name: images
+    label: 图片库
+    input: media/images
+    output: /media/images
+    rename: safe
+    extensions: [jpg, jpeg, png, webp, avif]
+  - name: downloads
+    label: LUT / 下载文件
+    input: media/downloads
+    output: /media/downloads
+    rename: safe
+    extensions: [cube, zip]
+
+settings:
+  commit:
+    identity: user
+    templates:
+      create: "content: 新增 {path}"
+      update: "content: 更新 {path}"
+      delete: "content: 删除 {path}"
+
+content:
+  - name: site
+    label: 网站设置
+    type: file
+    path: data/site.json
+    format: json
+    fields:
+      - name: name
+        label: 网站名称
+        type: string
+        required: true
+      - name: motto
+        label: 首页标语
+        type: string
+        required: true
+      - name: heroVideo
+        label: 首页背景视频地址
+        type: string
+        description: 建议填写可直接播放的 MP4 / WebM 地址；留空时显示背景图。
+      - name: heroPoster
+        label: 首页背景图
+        type: image
+        options:
+          media: images
+      - name: intro
+        label: 网站简介
+        type: text
+      - name: copyright
+        label: 页脚版权文字
+        type: string
+
+  - name: projects
+    label: 项目管理
+    type: file
+    path: data/projects.json
+    format: json
+    list: true
+    fields:
+      - name: id
+        label: 项目 ID
+        type: string
+        required: true
+        pattern:
+          regex: "^[a-z0-9-]+$"
+          message: "只能使用英文小写、数字和连字符，例如 wish-2026"
+        description: 用于项目网址，创建后尽量不要修改。
+      - name: title
+        label: 中文项目名
+        type: string
+        required: true
+      - name: englishTitle
+        label: 英文项目名
+        type: string
+      - name: year
+        label: 年份
+        type: string
+        required: true
+      - name: category
+        label: 项目类型
+        type: select
+        required: true
+        options:
+          values:
+            - name: 短片
+              label: 短片
+            - name: 商业片
+              label: 商业片
+            - name: MV
+              label: MV
+            - name: 纪录片
+              label: 纪录片
+            - name: 实验影像
+              label: 实验影像
+      - name: categoryEn
+        label: 英文类型
+        type: string
+      - name: roles
+        label: 我的职责
+        type: string
+        list: true
+      - name: cover
+        label: 项目封面
+        type: image
+        options:
+          media: images
+      - name: previewUrl
+        label: 悬停预览视频地址
+        type: string
+        description: 可选。建议使用短 MP4 / WebM 直链；YouTube/Bilibili 不用于悬停预览。
+      - name: videoUrl
+        label: 完整视频链接
+        type: string
+        description: 可填写 YouTube、Bilibili 或 MP4/WebM 直链。
+      - name: description
+        label: 一句话简介
+        type: text
+      - name: story
+        label: 项目故事 / 创作说明
+        type: text
+      - name: featured
+        label: 首页推荐
+        type: boolean
+      - name: gallery
+        label: 项目图片
+        type: image
+        list: true
+        options:
+          media: images
+      - name: order
+        label: 排序
+        type: number
+        description: 数字越小越靠前。
+      - name: theme
+        label: 无封面时的备用渐变
+        type: string
+        description: 可不填写。
+
+  - name: experiences
+    label: 经历管理
+    type: file
+    path: data/experiences.json
+    format: json
+    list: true
+    fields:
+      - name: year
+        label: 年份
+        type: string
+        required: true
+      - name: title
+        label: 经历名称
+        type: string
+        required: true
+      - name: role
+        label: 身份 / 职责
+        type: string
+      - name: description
+        label: 经历说明
+        type: text
+      - name: order
+        label: 排序
+        type: number
+        description: 数字越小越靠前。
+
+  - name: assets_group
+    label: 素材管理
+    type: group
+    items:
+      - name: video_assets
+        label: 视频素材
+        type: file
+        path: data/videos.json
+        format: json
+        list: true
+        fields:
+          - name: id
+            label: 素材 ID
+            type: string
+            required: true
+          - name: title
+            label: 素材名称
+            type: string
+            required: true
+          - name: cover
+            label: 视频封面
+            type: image
+            options:
+              media: images
+          - name: sourceUrl
+            label: 视频链接
+            type: string
+            description: 可填写 YouTube、Bilibili 或 MP4/WebM 直链。
+          - name: badge
+            label: 角标
+            type: string
+            description: 例如 4K。
+          - name: resolution
+            label: 分辨率
+            type: string
+          - name: info
+            label: 素材信息
+            type: text
+          - name: tags
+            label: 标签
+            type: string
+            list: true
+          - name: downloadUrl
+            label: 下载链接
+            type: string
+            description: 可选。以后有云盘/R2时填这里。
+          - name: order
+            label: 排序
+            type: number
+          - name: theme
+            label: 备用渐变
+            type: string
+
+      - name: photo_assets
+        label: 照片素材
+        type: file
+        path: data/photos.json
+        format: json
+        list: true
+        fields:
+          - name: id
+            label: 素材 ID
+            type: string
+            required: true
+          - name: title
+            label: 照片名称
+            type: string
+            required: true
+          - name: cover
+            label: 缩略图
+            type: image
+            options:
+              media: images
+          - name: image
+            label: 原图 / 展示图
+            type: image
+            options:
+              media: images
+          - name: badge
+            label: 角标
+            type: string
+            description: 例如 6K / RAW。
+          - name: resolution
+            label: 分辨率
+            type: string
+          - name: info
+            label: 照片信息
+            type: text
+          - name: tags
+            label: 标签
+            type: string
+            list: true
+          - name: downloadUrl
+            label: 下载链接
+            type: string
+          - name: order
+            label: 排序
+            type: number
+          - name: theme
+            label: 备用渐变
+            type: string
+
+      - name: lut_assets
+        label: LUT 素材
+        type: file
+        path: data/luts.json
+        format: json
+        list: true
+        fields:
+          - name: id
+            label: LUT ID
+            type: string
+            required: true
+          - name: title
+            label: LUT 名称
+            type: string
+            required: true
+          - name: before
+            label: Before 图片
+            type: image
+            options:
+              media: images
+          - name: after
+            label: After 图片
+            type: image
+            options:
+              media: images
+          - name: source
+            label: LUT 文件
+            type: file
+            options:
+              media: downloads
+              extensions: [cube, zip]
+          - name: badge
+            label: 角标
+            type: string
+            description: 建议填写 .CUBE。
+          - name: info
+            label: LUT 信息
+            type: text
+          - name: tags
+            label: 标签
+            type: string
+            list: true
+          - name: downloadUrl
+            label: 备用下载链接
+            type: string
+          - name: order
+            label: 排序
+            type: number
+          - name: theme
+            label: 备用渐变
+            type: string
+
+  - name: contact
+    label: 联系方式
+    type: file
+    path: data/contact.json
+    format: json
+    list: true
+    fields:
+      - name: label
+        label: 平台名称
+        type: string
+        required: true
+      - name: value
+        label: 联系信息
+        type: string
+        required: true
