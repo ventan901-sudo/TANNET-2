@@ -10,17 +10,13 @@
       "导演",
       "剪辑"
     ],
-    "cover": "",
-    "preview": "",
-    "film": "",
-    "description": "关于记忆、距离与未曾消失的情绪。",
-    "story": "一部关于记忆、距离与愿望的短片。这里可以继续补充项目背景、创作动机与故事概述。",
+    "cover": "/media/images/file.jpg",
+    "previewUrl": "https://weixin.qq.com/sph/A7Zm1cJpBR",
+    "description": "穿梭在喧嚣城市，拨开人潮与车流，踏入公园的林间深处。奔赴这一场与自然的相遇，只为寻见心底回响的声音，那一份久候、如愿的声音。",
+    "story": "参与南方国际传播中心South与台商优市网联合发起的第八届“粤来粤有趣”短视频创作大赛，作品获得大赛铜奖。",
     "featured": true,
-    "theme": "linear-gradient(135deg,#15262c,#40271f 48%,#8d765e)",
-    "gallery": [],
     "order": 1,
-    "videoUrl": "",
-    "previewUrl": ""
+    "theme": "linear-gradient(135deg,#15262c,#40271f 48%,#8d765e)"
   },
   {
     "id": "night-city",
@@ -34,17 +30,11 @@
       "剪辑",
       "调色"
     ],
-    "cover": "",
-    "preview": "",
-    "film": "",
     "description": "一段关于城市夜色、孤独与移动中的视觉旅程。",
     "story": "以城市夜景、霓虹与人物移动为核心视觉语言的音乐影像实验。",
     "featured": true,
-    "theme": "linear-gradient(135deg,#07141c,#0e4b66 48%,#8b4a31)",
-    "gallery": [],
     "order": 2,
-    "videoUrl": "",
-    "previewUrl": ""
+    "theme": "linear-gradient(135deg,#07141c,#0e4b66 48%,#8b4a31)"
   },
   {
     "id": "commercial-reel",
@@ -57,17 +47,11 @@
       "导演",
       "剪辑"
     ],
-    "cover": "",
-    "preview": "",
-    "film": "",
     "description": "商业影像与品牌视觉项目合集。",
     "story": "用于集中展示品牌片、产品片、活动影像以及商业内容创作。",
     "featured": true,
-    "theme": "linear-gradient(135deg,#292929,#0e1012 50%,#58636c)",
-    "gallery": [],
     "order": 3,
-    "videoUrl": "",
-    "previewUrl": ""
+    "theme": "linear-gradient(135deg,#292929,#0e1012 50%,#58636c)"
   },
   {
     "id": "experiment-01",
@@ -80,16 +64,10 @@
       "视觉设计",
       "剪辑"
     ],
-    "cover": "",
-    "preview": "",
-    "film": "",
     "description": "关于运动、光线与节奏的短视觉实验。",
     "story": "用来收录不属于传统短片、MV、商业片分类的视觉尝试。",
     "featured": false,
-    "theme": "linear-gradient(135deg,#1a2028,#0d0f11 60%,#334151)",
-    "gallery": [],
     "order": 4,
-    "videoUrl": "",
-    "previewUrl": ""
+    "theme": "linear-gradient(135deg,#1a2028,#0d0f11 60%,#334151)"
   }
 ]
