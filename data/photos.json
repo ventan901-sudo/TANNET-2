@@ -4,14 +4,13 @@
     "title": "麦当劳",
     "cover": "/media/images/2.jpg",
     "image": "/media/images/2.jpg",
-    "badge": "6K",
+    "badge": "1080p",
     "resolution": "6000 × 4000",
-    "info": "城市 · 建筑 · 日落 · JPG / RAW · 6000×4000",
+    "info": "城市 · 建筑  · JPG  · 6000×4000",
     "tags": [
       "城市",
       "建筑",
-      "日落",
-      "RAW"
+      "JPG"
     ],
     "order": 2,
     "theme": "linear-gradient(135deg,#62a9d1,#f3c76f 55%,#cb7965)"
