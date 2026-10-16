@@ -8,7 +8,9 @@
     "categoryEn": "Short Film",
     "roles": [
       "导演",
-      "剪辑"
+      "摄像",
+      "剪辑",
+      "调色"
     ],
     "cover": "/media/images/file.jpg",
     "websiteVideoUrl": "https://weixin.qq.com/sph/A7Zm1cJpBR",
@@ -21,19 +23,26 @@
   },
   {
     "id": "night-city",
-    "title": "夜城",
-    "englishTitle": "NIGHT CITY",
+    "title": "重生之我是一只鸡",
+    "englishTitle": "Reborn as a Chicken",
     "year": "2026",
-    "category": "MV",
-    "categoryEn": "Music Video",
+    "category": "短片",
+    "categoryEn": "Short Film",
     "roles": [
+      "导演",
       "摄影",
       "剪辑",
       "调色"
     ],
-    "description": "一段关于城市夜色、孤独与移动中的视觉旅程。",
-    "story": "以城市夜景、霓虹与人物移动为核心视觉语言的音乐影像实验。",
+    "cover": "/media/images/f5e499750ed3b00d24b810487d3b1ed4.jpg",
+    "websiteVideoUrl": "https://weixin.qq.com/sph/A54IDiNO2A",
+    "wechatVideoUrl": "https://weixin.qq.com/sph/A54IDiNO2A",
+    "description": "造创意短视频作品，聚焦地方特色美食，用鲜活镜头呈现食材本味、制作技艺与乡土人文，让地方风味出圈传播",
+    "story": "参与广东共青团新媒体达人培养计划“不打烊创作营”，用短期交流会+实践集训的培养模式，完成一\n批聚焦“百千万工程”和青年典型故事的优质作品",
     "featured": true,
+    "gallery": [
+      "/media/images/202604270155358221486.jpg"
+    ],
     "order": 2,
     "theme": "linear-gradient(135deg,#07141c,#0e4b66 48%,#8b4a31)"
   },
