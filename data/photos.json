@@ -4,6 +4,7 @@
     "title": "麦当劳",
     "cover": "/media/images/2.jpg",
     "image": "/media/images/2.jpg",
+    "badge": "JPG",
     "info": "城市 · 建筑  · JPG  · 6000×4000",
     "tags": [
       "城市",
@@ -17,6 +18,7 @@
     "title": "废弃剧院",
     "cover": "/media/images/2026101717323520085.jpg",
     "image": "/media/images/2026101717323520085-1.jpg",
+    "badge": "JPG",
     "tags": [
       "建筑",
       "室内",
@@ -30,6 +32,7 @@
     "title": "观众",
     "cover": "/media/images/2026101717323920185.jpg",
     "image": "/media/images/2026101717323920185-1.jpg",
+    "badge": "JPG",
     "tags": [
       "建筑",
       "室内",
@@ -43,6 +46,24 @@
     "title": "视觉实验 01",
     "cover": "/media/images/2026101717324320385.jpg",
     "image": "/media/images/2026101717324320385-1.jpg",
-    "order": 3
+    "badge": "JPG",
+    "tags": [
+      "蓝色",
+      "水波"
+    ],
+    "order": 4
+  },
+  {
+    "id": "photo-005",
+    "title": "暖阳下",
+    "cover": "/media/images/2026101717324220285.jpg",
+    "image": "/media/images/2026101717324220285-1.jpg",
+    "badge": "JPG",
+    "tags": [
+      "阳光",
+      "建筑",
+      "室内"
+    ],
+    "order": 1
   }
 ]
