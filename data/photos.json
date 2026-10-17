@@ -4,43 +4,45 @@
     "title": "麦当劳",
     "cover": "/media/images/2.jpg",
     "image": "/media/images/2.jpg",
-    "badge": "1080p",
-    "resolution": "6000 × 4000",
     "info": "城市 · 建筑  · JPG  · 6000×4000",
     "tags": [
       "城市",
-      "建筑",
-      "JPG"
+      "建筑"
     ],
-    "order": 2,
+    "order": 1,
     "theme": "linear-gradient(135deg,#62a9d1,#f3c76f 55%,#cb7965)"
   },
   {
     "id": "photo-002",
-    "title": "Field 03",
-    "badge": "6K",
-    "resolution": "6000 × 4000",
-    "info": "自然 · 草地 · 旅行 · JPG / RAW · 6000×4000",
+    "title": "废弃剧院",
+    "cover": "/media/images/2026101717323520085.jpg",
+    "image": "/media/images/2026101717323520085-1.jpg",
     "tags": [
-      "自然",
-      "草地",
-      "旅行"
+      "建筑",
+      "室内",
+      "柔光"
     ],
-    "order": 5,
+    "order": 2,
     "theme": "linear-gradient(135deg,#709258,#c5d79f)"
   },
   {
     "id": "photo-003",
-    "title": "Portrait Light 05",
-    "badge": "RAW",
-    "resolution": "RAW / JPG",
-    "info": "人物 · 肖像 · 柔光 · RAW / JPG",
+    "title": "观众",
+    "cover": "/media/images/2026101717323920185.jpg",
+    "image": "/media/images/2026101717323920185-1.jpg",
     "tags": [
-      "人物",
-      "肖像",
+      "建筑",
+      "室内",
       "柔光"
     ],
-    "order": 8,
+    "order": 3,
     "theme": "linear-gradient(135deg,#9c7d64,#ded0c1)"
+  },
+  {
+    "id": "photo-004",
+    "title": "视觉实验 01",
+    "cover": "/media/images/2026101717324320385.jpg",
+    "image": "/media/images/2026101717324320385-1.jpg",
+    "order": 3
   }
 ]
